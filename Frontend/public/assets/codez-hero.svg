@@ -1,0 +1,103 @@
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo container - centered and enlarged -->
+  <g transform="translate(300, 200)">
+    <style>
+      @keyframes pulseLeft {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-3px); }
+        100% { transform: translateX(0); }
+      }
+      @keyframes pulseRight {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(3px); }
+        100% { transform: translateX(0); }
+      }
+      .bracket-left {
+        animation: pulseLeft 2s infinite ease-in-out;
+        transform-origin: center;
+      }
+      .bracket-right {
+        animation: pulseRight 2s infinite ease-in-out;
+        transform-origin: center;
+      }
+      .code-text {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+      }
+      .z-path {
+        stroke-dasharray: 300;
+        stroke-dashoffset: 300;
+        animation: drawZ 3s infinite forwards;
+      }
+      @keyframes drawZ {
+        0% { stroke-dashoffset: 300; }
+        60% { stroke-dashoffset: 0; }
+        100% { stroke-dashoffset: 0; }
+      }
+      @keyframes colorChange {
+        0% { stroke: #11847b; }
+        25% { stroke: #ff3333; }
+        50% { stroke: #3366ff; }
+        75% { stroke: #33cc33; }
+        100% { stroke: #11847b; }
+      }
+    </style>
+    
+    <!-- CODEZ - Enlarged and centered -->
+    <!-- Text: "CODE" with color animation -->
+    <text class="code-text" x="-15" y="20" font-size="70" text-anchor="middle" fill="#0A3B48">
+      <animate attributeName="fill" values="#0A3B48;#11847b;#0A3B48" dur="5s" repeatCount="indefinite"/>
+      CODE
+    </text>
+    
+    <!-- Z letter - with animation and color change -->
+    <path class="z-path" d="M110,0 L180,0 L110,60 L180,60" stroke="#11847b" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" fill="none">
+      <animate attributeName="stroke" values="#11847b;#0A3B48;#11847b" dur="5s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Dot accent for modern look -->
+    <circle cx="200" cy="60" r="8" fill="#5FBDCE">
+      <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="fill" values="#5FBDCE;#33cc33;#5FBDCE" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Flowing data points -->
+  <g>
+    <!-- First data stream -->
+    <circle cx="0" cy="0" r="5" fill="#5FBDCE">
+      <animateMotion path="M 0,100 C 100,75 200,125 300,100 S 450,50 600,75" dur="8s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="0" cy="0" r="5" fill="#11847b">
+      <animateMotion path="M 0,100 C 100,75 200,125 300,100 S 450,50 600,75" dur="8s" begin="2s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Second data stream -->
+    <circle cx="0" cy="0" r="4" fill="#5FBDCE">
+      <animateMotion path="M 0,150 C 125,160 225,140 350,150 S 475,140 600,150" dur="12s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="0" cy="0" r="4" fill="#11847b">
+      <animateMotion path="M 0,150 C 125,160 225,140 350,150 S 475,140 600,150" dur="12s" begin="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Third data stream -->
+    <circle cx="0" cy="0" r="5" fill="#0A3B48">
+      <animateMotion path="M 0,200 C 150,225 250,175 350,200 S 500,225 600,200" dur="10s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="0" cy="0" r="5" fill="#1A7A8C">
+      <animateMotion path="M 0,200 C 150,225 250,175 350,200 S 500,225 600,200" dur="10s" begin="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Fourth data stream (bottom) -->
+    <circle cx="0" cy="0" r="4" fill="#5FBDCE">
+      <animateMotion path="M 0,300 C 125,280 225,320 350,300 S 475,280 600,300" dur="9s" repeatCount="indefinite" />
+    </circle>
+    
+    <circle cx="0" cy="0" r="4" fill="#11847b">
+      <animateMotion path="M 0,300 C 125,280 225,320 350,300 S 475,280 600,300" dur="9s" begin="2.5s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>

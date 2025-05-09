@@ -1,0 +1,50 @@
+<svg viewBox="-20 0 180 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo background for better visibility in header -->
+  <rect x="0" y="0" width="190" height="60" fill="transparent"/>
+  
+  <style>
+    @keyframes pulseLeft {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(-3px); }
+      100% { transform: translateX(0); }
+    }
+    @keyframes pulseRight {
+      0% { transform: translateX(0); }
+      50% { transform: translateX(3px); }
+      100% { transform: translateX(0); }
+    }
+    .bracket-left {
+      animation: pulseLeft 2s infinite ease-in-out;
+      transform-origin: center;
+    }
+    .bracket-right {
+      animation: pulseRight 2s infinite ease-in-out;
+      transform-origin: center;
+    }
+    .code-text {
+      font-family: 'Arial', sans-serif;
+      font-weight: bold;
+    }
+    .z-path {
+      stroke-dasharray: 300;
+      stroke-dashoffset: 300;
+      animation: drawZ 3s infinite forwards;
+    }
+    @keyframes drawZ {
+      0% { stroke-dashoffset: 300; }
+      60% { stroke-dashoffset: 0; }
+      100% { stroke-dashoffset: 0; }
+    }
+  </style>
+  
+  <!-- Z letter - with animation -->
+  <path class="z-path" d="M80,12 L120,12 L80,38 L120,38" stroke="#11847b" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  
+  <!-- Text: "CODE" -->
+  <text class="code-text" x="34" y="32" font-size="30" fill="#0A3B48" text-anchor="middle">CODE</text>
+  
+  <!-- Dot accent for modern look -->
+  <circle cx="130" cy="38" r="4" fill="#5FBDCE">
+    <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
